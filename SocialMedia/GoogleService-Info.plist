@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>607378340645-uhehtnna5j9sh15ktch33ogm1hpj4vmr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.607378340645-uhehtnna5j9sh15ktch33ogm1hpj4vmr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCE9IhNhGUO64OAJ_-f4IZhdpV8g97YYqs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>607378340645</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>JackFinnis.SocialMedia</string>
+	<key>PROJECT_ID</key>
+	<string>social-media-1a819</string>
+	<key>STORAGE_BUCKET</key>
+	<string>social-media-1a819.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:607378340645:ios:398ce3b17d5ae361a9f8cc</string>
+</dict>
+</plist>
