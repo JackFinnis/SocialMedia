@@ -19,6 +19,7 @@
 		F41365F02655B504000CFD54 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41365EF2655B504000CFD54 /* SignUpView.swift */; };
 		F41365F726568B85000CFD54 /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41365F626568B85000CFD54 /* SignOutView.swift */; };
 		F41365FB26568BDE000CFD54 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41365FA26568BDE000CFD54 /* AuthenticationView.swift */; };
+		F41366022656BCEF000CFD54 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F41366012656BCEF000CFD54 /* FirebaseAnalytics */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +32,6 @@
 		F41365D926554439000CFD54 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		F41365EA2655B417000CFD54 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		F41365EF2655B504000CFD54 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		F41365F42656829F000CFD54 /* SocialMedia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SocialMedia.entitlements; sourceTree = "<group>"; };
 		F41365F626568B85000CFD54 /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
 		F41365FA26568BDE000CFD54 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -43,6 +43,7 @@
 			files = (
 				F41365B826554077000CFD54 /* FirebaseFirestore in Frameworks */,
 				F41365E32655B00E000CFD54 /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				F41366022656BCEF000CFD54 /* FirebaseAnalytics in Frameworks */,
 				F41365C826554077000CFD54 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,7 +71,6 @@
 		F413659A265539D0000CFD54 /* SocialMedia */ = {
 			isa = PBXGroup;
 			children = (
-				F41365F42656829F000CFD54 /* SocialMedia.entitlements */,
 				F413659B265539D0000CFD54 /* SocialMediaApp.swift */,
 				F41365DC26554571000CFD54 /* Views */,
 				F41365DD2655457B000CFD54 /* View Models */,
@@ -144,6 +144,7 @@
 				F41365B726554077000CFD54 /* FirebaseFirestore */,
 				F41365C726554077000CFD54 /* FirebaseAuth */,
 				F41365E22655B00E000CFD54 /* FirebaseFirestoreSwift-Beta */,
+				F41366012656BCEF000CFD54 /* FirebaseAnalytics */,
 			);
 			productName = SocialMedia;
 			productReference = F4136598265539D0000CFD54 /* SocialMedia.app */;
@@ -337,7 +338,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SocialMedia/SocialMedia.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SocialMedia/Preview Content\"";
 				DEVELOPMENT_TEAM = 4CQW4CFFYT;
@@ -360,7 +361,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SocialMedia/SocialMedia.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SocialMedia/Preview Content\"";
 				DEVELOPMENT_TEAM = 4CQW4CFFYT;
@@ -427,6 +428,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F41365AE26554077000CFD54 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseFirestoreSwift-Beta";
+		};
+		F41366012656BCEF000CFD54 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F41365AE26554077000CFD54 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

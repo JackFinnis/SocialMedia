@@ -20,5 +20,6 @@ struct SignOutView: View {
             }
             .navigationTitle("Signed In")
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }

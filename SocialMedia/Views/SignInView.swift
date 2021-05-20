@@ -32,10 +32,14 @@ struct SignInView: View {
                 Section {
                     TextField("Email", text: $email)
                         .textContentType(.emailAddress)
+                        .keyboardType(.emailAddress)
+                        .disableAutocorrection(true)
                     SecureField("Password", text: $password)
                         .textContentType(.password)
+                        .disableAutocorrection(true)
                     if errorMessageIsPresented {
                         Text(errorMessage)
+                            .font(.subheadline)
                             .foregroundColor(Color(UIColor.systemRed))
                     }
                     Button("Sign In") {
@@ -57,6 +61,7 @@ struct SignInView: View {
     func signIn() {
         authenicationManager.signIn(email: email, password: password) { error in
             if error != nil {
+                print(error!)
                 errorMessage = "Error signing in"
             } else {
                 errorMessage = ""

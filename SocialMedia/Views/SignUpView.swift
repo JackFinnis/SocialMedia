@@ -31,12 +31,17 @@ struct SignUpView: View {
                 Section {
                     TextField("Email", text: $email)
                         .textContentType(.emailAddress)
+                        .keyboardType(.emailAddress)
+                        .disableAutocorrection(true)
                     SecureField("Password", text: $password)
                         .textContentType(.newPassword)
+                        .disableAutocorrection(true)
                     SecureField("Confirm Password", text: $confirmPassword)
                         .textContentType(.newPassword)
+                        .disableAutocorrection(true)
                     if errorMessageIsPresented {
                         Text(errorMessage)
+                            .font(.subheadline)
                             .foregroundColor(Color(UIColor.systemRed))
                     }
                     Button("Sign Up") {
@@ -59,8 +64,10 @@ struct SignUpView: View {
         } else {
             authenicationManager.signUp(email: email, password: password) { error in
                 if error != nil {
+                    print(error!)
                     errorMessage = "Error signing up"
                 } else {
+                    isShowingSignUpView = false
                     errorMessage = ""
                 }
             }
