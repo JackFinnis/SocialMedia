@@ -12,27 +12,50 @@ class AuthenticationManager: ObservableObject {
     
     let auth = Auth.auth()
     
-    var isSignedIn: Bool {
-        return auth.currentUser != nil
-    }
+    @Published var signedIn: Bool = false
     
-    func signIn(email: String, password: String) {
+    func signIn(email: String, password: String, completion: @escaping (Error?) -> Void) {
         auth.signIn(withEmail: email, password: password) { result, error in
-            guard result != nil, error == nil else {
+            if error != nil {
                 print("Error signing in")
-                return
+                completion(error)
+            } else {
+                print("Signed in")
+                self.signedIn = true
+                completion(nil)
             }
-            print("User is signed in")
         }
     }
     
-    func signUp(email: String, password: String) {
+    func signUp(email: String, password: String, completion: @escaping (Error?) -> Void) {
         auth.createUser(withEmail: email, password: password) { result, error in
-            guard result != nil, error == nil else {
+            if error != nil {
                 print("Error signing up")
-                return
+                completion(error)
+            } else {
+                print("Signed up")
+                
+                // Then automatically sign in
+                self.signIn(email: email, password: password) { error in
+                    if error != nil {
+                        print("Error automatically signing in")
+                    } else {
+                        print("Automatically signed in")
+                    }
+                }
+                completion(nil)
             }
-            print("User is signed up")
         }
+    }
+    
+    func signOut() {
+        do {
+            try auth.signOut()
+        } catch {
+            print("Error signing out")
+            return
+        }
+        print("Signed out")
+        signedIn = false
     }
 }
