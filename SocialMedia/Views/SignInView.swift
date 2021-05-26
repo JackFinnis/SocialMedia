@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SignInView: View {
     
-    @ObservedObject var authenicationManager: AuthenticationManager
+    @EnvironmentObject var authenicationManager: AuthenticationManager
     
     // Show sign up view
     @State var isShowingSignUpView: Bool = false
@@ -50,7 +50,7 @@ struct SignInView: View {
                     isShowingSignUpView = true
                 }
                 .sheet(isPresented: $isShowingSignUpView) {
-                    SignUpView(authenicationManager: authenicationManager, isShowingSignUpView: $isShowingSignUpView)
+                    SignUpView(isShowingSignUpView: $isShowingSignUpView)
                 }
             }
             .navigationTitle("Sign In")

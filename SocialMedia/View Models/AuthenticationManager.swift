@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import Firebase
 import FirebaseAuth
 
 class AuthenticationManager: ObservableObject {
     
     let auth = Auth.auth()
+    let db = Firestore.firestore()
     
     @Published var signedIn: Bool = false
     
@@ -21,6 +23,7 @@ class AuthenticationManager: ObservableObject {
                 completion(error)
             } else {
                 print("Signed in")
+                self.addLiveUser()
                 self.signedIn = true
                 completion(nil)
             }
@@ -57,5 +60,15 @@ class AuthenticationManager: ObservableObject {
         }
         print("Signed out")
         signedIn = false
+    }
+    
+    func addLiveUser() {
+        db.collection("Live Users").document("User").setData(["Name": "Jack"])
+    }
+    
+    func startListensingForUsers() {
+        db.collection("Live Users").doc("User").onSnapshot((doc) => {
+            print(doc.data())
+        })
     }
 }

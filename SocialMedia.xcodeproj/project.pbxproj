@@ -17,9 +17,10 @@
 		F41365E32655B00E000CFD54 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = F41365E22655B00E000CFD54 /* FirebaseFirestoreSwift-Beta */; };
 		F41365EB2655B417000CFD54 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41365EA2655B417000CFD54 /* SignInView.swift */; };
 		F41365F02655B504000CFD54 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41365EF2655B504000CFD54 /* SignUpView.swift */; };
-		F41365F726568B85000CFD54 /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41365F626568B85000CFD54 /* SignOutView.swift */; };
 		F41365FB26568BDE000CFD54 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41365FA26568BDE000CFD54 /* AuthenticationView.swift */; };
 		F41366022656BCEF000CFD54 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F41366012656BCEF000CFD54 /* FirebaseAnalytics */; };
+		F4C76A21265E7CE300B7072B /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C76A20265E7CE300B7072B /* UserListView.swift */; };
+		F4C76A24265E7D5F00B7072B /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C76A23265E7D5F00B7072B /* FirestoreManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +33,9 @@
 		F41365D926554439000CFD54 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		F41365EA2655B417000CFD54 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		F41365EF2655B504000CFD54 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		F41365F626568B85000CFD54 /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
 		F41365FA26568BDE000CFD54 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		F4C76A20265E7CE300B7072B /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
+		F4C76A23265E7D5F00B7072B /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +99,7 @@
 				F41365FA26568BDE000CFD54 /* AuthenticationView.swift */,
 				F41365EA2655B417000CFD54 /* SignInView.swift */,
 				F41365EF2655B504000CFD54 /* SignUpView.swift */,
-				F41365F626568B85000CFD54 /* SignOutView.swift */,
+				F4C76A20265E7CE300B7072B /* UserListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				F41365D926554439000CFD54 /* AuthenticationManager.swift */,
+				F4C76A23265E7D5F00B7072B /* FirestoreManager.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -203,12 +206,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4C76A21265E7CE300B7072B /* UserListView.swift in Sources */,
 				F41365DA26554439000CFD54 /* AuthenticationManager.swift in Sources */,
 				F41365F02655B504000CFD54 /* SignUpView.swift in Sources */,
 				F41365FB26568BDE000CFD54 /* AuthenticationView.swift in Sources */,
 				F413659C265539D0000CFD54 /* SocialMediaApp.swift in Sources */,
 				F41365EB2655B417000CFD54 /* SignInView.swift in Sources */,
-				F41365F726568B85000CFD54 /* SignOutView.swift in Sources */,
+				F4C76A24265E7D5F00B7072B /* FirestoreManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

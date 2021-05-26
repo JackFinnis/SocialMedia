@@ -1,15 +1,15 @@
 //
-//  SignOutView.swift
+//  UserListView.swift
 //  SocialMedia
 //
-//  Created by Finnis on 20/05/2021.
+//  Created by Finnis on 26/05/2021.
 //
 
 import SwiftUI
 
-struct SignOutView: View {
+struct UserListView: View {
     
-    @ObservedObject var authenicationManager: AuthenticationManager
+    @EnvironmentObject var authenicationManager: AuthenticationManager
     
     var body: some View {
         NavigationView {

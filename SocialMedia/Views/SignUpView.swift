@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SignUpView: View {
     
-    @ObservedObject var authenicationManager: AuthenticationManager
+    @EnvironmentObject var authenicationManager: AuthenticationManager
     @Binding var isShowingSignUpView: Bool
     
     @State var email: String = ""

@@ -9,14 +9,14 @@ import SwiftUI
 
 struct AuthenticationView: View {
     
-    // Firebase authenication manager
-    @StateObject var authenicationManager = AuthenticationManager()
+    @EnvironmentObject var authenicationManager: AuthenticationManager
+    @EnvironmentObject var firestoreManager: FirestoreManager
     
     var body: some View {
         if authenicationManager.signedIn {
-            SignOutView(authenicationManager: authenicationManager)
+            UserListView()
         } else {
-            SignInView(authenicationManager: authenicationManager)
+            SignInView()
         }
     }
 }

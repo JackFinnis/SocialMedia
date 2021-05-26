@@ -14,9 +14,17 @@ struct SocialMediaApp: App {
     // Set up Firebase
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
+    // Authenication manager
+    @StateObject var authenicationManager = AuthenticationManager()
+    
+    // Firestore manager
+    @StateObject var firestoreManager = FirestoreManager()
+    
     var body: some Scene {
         WindowGroup {
             AuthenticationView()
+                .environmentObject(authenicationManager)
+                .environmentObject(firestoreManager)
         }
     }
 }
