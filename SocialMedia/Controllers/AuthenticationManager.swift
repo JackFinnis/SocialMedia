@@ -22,9 +22,9 @@ class AuthenticationManager: ObservableObject {
                 print("Error signing in")
                 completion(error)
             } else {
-                print("Signed in")
-                self.addLiveUser()
+                print("Success signing in")
                 self.signedIn = true
+                self.setUserStatus(active: true)
                 completion(nil)
             }
         }
@@ -36,14 +36,15 @@ class AuthenticationManager: ObservableObject {
                 print("Error signing up")
                 completion(error)
             } else {
-                print("Signed up")
+                print("Success signing up")
+                self.addUser(email: email)
                 
                 // Then automatically sign in
                 self.signIn(email: email, password: password) { error in
                     if error != nil {
                         print("Error automatically signing in")
                     } else {
-                        print("Automatically signed in")
+                        print("Success automatically signing in")
                     }
                 }
                 completion(nil)
@@ -58,17 +59,28 @@ class AuthenticationManager: ObservableObject {
             print("Error signing out")
             return
         }
-        print("Signed out")
+        print("Success signing out")
         signedIn = false
+        setUserStatus(active: false)
     }
     
-    func addLiveUser() {
-        db.collection("Live Users").document("User").setData(["Name": "Jack"])
+    func addUser(email: String) {
+        let user = auth.currentUser
+        if user != nil {
+            db.collection("Users").addDocument(data: ["userID": user!.uid, "active": false, "email": email]) { error in
+                if error != nil {
+                    print("Error adding user")
+                } else {
+                    print("Success adding user")
+                }
+            }
+        }
     }
     
-    func startListensingForUsers() {
-        db.collection("Live Users").doc("User").onSnapshot((doc) => {
-            print(doc.data())
-        })
+    func setUserStatus(active: Bool) {
+        let user = auth.currentUser
+        if user != nil {
+            db.collection("Users").whereField("userID", isEqualTo: user!.uid).setValue(active, forKey: "active")
+        }
     }
 }
